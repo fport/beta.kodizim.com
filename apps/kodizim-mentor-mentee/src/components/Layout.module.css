@@ -63,7 +63,7 @@
 .tableHeader,
 .tableRow {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
     padding: 12px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -87,7 +87,7 @@
     object-fit: cover;
 }
 
-.modal{
+.mModal {
     position: fixed;
     display: flex;
     justify-content: center;
@@ -100,7 +100,7 @@
     z-index: 9999;
 }
 
-.modalContent {
+.mModalContent {
     position: relative;
     background-color: #fff;
     padding: 20px;
@@ -110,11 +110,4 @@
     overflow: auto;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 4px;
-}
-
-.closeIcon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
 }

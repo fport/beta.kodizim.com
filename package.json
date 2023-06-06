@@ -2,7 +2,8 @@
   "name": "beta.kodizim.com",
   "private": true,
   "scripts": {
-    "build:pkg": "pnpm run prepare -r"
+    "build:pkg": "pnpm run prepare -r",
+    "start": "concurrently \"pnpm --filter kodizim-digital-garden run dev\" \"pnpm --filter kodizim-events run dev\" \"pnpm --filter kodizim-freelance run dev\" \"pnpm --filter kodizim-mentor-mentee run dev\" \"pnpm --filter composer run dev\""
   },
   "packageManager": "pnpm@7.0.0",
   "engines": {
@@ -12,7 +13,8 @@
     "eslint": "^7.32.0",
     "eslint-config-custom": "workspace:*",
     "prettier": "^2.5.1",
-    "turbo": "latest"
+    "turbo": "latest",
+    "concurrently": "^6.2.1"
   },
   "turbo": {
     "npmClient": "pnpm",

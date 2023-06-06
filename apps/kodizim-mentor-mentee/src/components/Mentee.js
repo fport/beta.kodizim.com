@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import styles from "./Layout.module.css";
-import AddMentee from "@/components/AddMentee";
-import AddMentor from "@/components/AddMentor";
+import AddMentee from "./AddMentee";
 
-export default function MentorPage() {
+export default function MenteePage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [events, setEvents] = useState([]);
     const [search, setSearch] = useState("");
 
     const fetchEvents = async () => {
-        const response = await fetch("http://localhost:8080/api/v1/public/mentor");
+        const response = await fetch("http://localhost:8080/api/v1/public/Mentee");
         const data = await response.json();
         setEvents(data.data);
     };
@@ -19,7 +18,7 @@ export default function MentorPage() {
     }, []);
 
     const filteredEvents = events?.filter((event) =>
-        event?.name?.toLowerCase()?.includes(search?.toLowerCase())
+        event.name.toLowerCase().includes(search.toLowerCase())
     );
 
     const handleSetIsModalOpen = (value) => {
@@ -29,9 +28,9 @@ export default function MentorPage() {
 
     return (
         <>
-            {isModalOpen && <AddMentor setIsModalOpen={handleSetIsModalOpen}/>}
+            {isModalOpen && <AddMentee setIsModalOpen={handleSetIsModalOpen}/>}
         <div className={styles.container}>
-            <h1 className={styles.title}>Mentor Listesi</h1>
+            <h1 className={styles.title}>Mentee Listesi</h1>
             <div className={styles.toolbar}>
                 <input
                     className={styles.searchBar}
@@ -47,7 +46,7 @@ export default function MentorPage() {
                     <div className={styles.tableColumn}>İsim Soyisim</div>
                     <div className={styles.tableColumn}>GitHub</div>
                     <div className={styles.tableColumn}>Linkedin</div>
-                    <div className={styles.tableColumn}>Uzmanlık Alanı</div>
+                    <div className={styles.tableColumn}>Beklenti</div>
                 </div>
                 {filteredEvents.map((event, index) => (
                     <div key={index} className={styles.tableRow}>

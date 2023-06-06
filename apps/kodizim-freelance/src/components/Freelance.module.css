@@ -86,3 +86,28 @@
     max-height: 100px;
     object-fit: cover;
 }
+
+.fModal{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 9999;
+}
+
+.fModalContent {
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    min-width: 640px;
+    min-height: 721px;
+    height: 860px;
+    overflow: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 4px;
+}

@@ -10,7 +10,7 @@ const cabin = Cabin({
 })
 export default function App({Component, pageProps}) {
     const router = useRouter();
-    console.log(router.pathname);
+
     return (
         <main className={`${cabin.className} relative`}>
             {

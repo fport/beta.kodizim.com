@@ -1,9 +1,12 @@
-import React from 'react';
+import dynamic from 'next/dynamic'
 
-function Mentor(props) {
+const RemoteMentor = dynamic(
+    () => import("kodizimMentorAndMentee/Mentor"),
+    {ssr: false}
+)
+
+export default function Mentor() {
     return (
-        <div>Mentor</div>
-    );
+        <RemoteMentor/>
+    )
 }
-
-export default Mentor;

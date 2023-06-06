@@ -1,9 +1,12 @@
-import React from 'react';
+import dynamic from 'next/dynamic'
 
-function Mentee(props) {
+const RemoteMentee = dynamic(
+    () => import("kodizimMentorAndMentee/Mentee"),
+    {ssr: false}
+)
+
+export default function Mentee() {
     return (
-        <div>Mentee</div>
-    );
+        <RemoteMentee/>
+    )
 }
-
-export default Mentee;
